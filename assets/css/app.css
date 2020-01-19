@@ -1,0 +1,240 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+@media print {
+    .container {
+        width: auto;
+    }
+}
+
+.jour {
+    text-align: right;
+    clear: both;
+    margin-top: 30px;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    height: auto;
+    background: white;
+    font-family: 'Comfortaa', cursive;
+    overflow-x: hidden;
+}
+
+button a {
+    text-decoration: none !important;
+    color: white;
+}
+
+button a:hover{
+    color: white !important;
+}
+
+h1 {
+    text-align: center !important;
+}
+
+h2 {
+    color: white;
+    text-align: center !important;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.titreProfil {
+    color: #353b48;
+    text-align: center !important;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* ------------------ Header ------------------ */
+#containerNav {
+    background-image: linear-gradient(to right, #5bbdff, #94dfff);
+    font-family: 'Chelsea Market', cursive;
+}
+
+.navbar-dark {
+    background-image: linear-gradient(to right, #5bbdff, #94dfff);
+}
+
+#logo img {
+    transform: scale(0.5) ;
+    width: 90px;
+}
+
+.nav-link-color {
+    color: white !important;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.nav-link-color:hover {
+    opacity: 1;
+}
+
+.utilisateur {
+    position: absolute;
+    right: 15px;
+}
+
+.avatarPetit {
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+    border-radius: 50px;
+}
+
+.logout {
+    width: 20px;
+    opacity: 0.7;
+}
+.utilisateur a{
+    display: inline;
+}
+
+.utilisateur:hover {
+    opacity: 1;
+}
+
+/* ------------------ Main ------------------ */
+
+
+.main {
+    margin-bottom: 50px;
+    padding: 64px;
+    width: 100%;
+}
+
+.table-hover tr:hover > td{
+    background-color: #bfc9ff;
+}
+
+#imgUpload {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#profil {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+#profil button {
+    margin-top: 50px;
+}
+
+#avatar {
+    width: 150px;
+    margin-bottom: 30px;
+}
+
+.bouton {
+    background-color: #5bbdff;
+    padding: 15px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none !important;
+    transition: background-color 0.3s;
+}
+
+.bouton:hover {
+    background-color: #74fcff;
+    color: white;
+}
+
+button {
+    border: none !important;
+}
+
+.labelProfil {
+    background-color: #353b48;
+    padding: 5px;
+    color: white;
+}
+
+.gauche {
+    text-align: right;
+}
+
+.droit {
+    text-align: left;
+}
+
+.plus {
+    width: 15px;
+}
+
+#site {
+    text-align: center;
+}
+
+#showSite {
+    text-align: center;
+}
+
+#utilisateur {
+    text-align: center;
+}
+
+#inscription {
+    text-align: center;
+}
+
+.message_erreur {
+    color: red;
+}
+
+/*--------------------Social media Button--------*/
+/* Style all font awesome icons */
+.fa {
+    padding: 10px;
+    font-size: 15px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Add a hover effect */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+/* ------------------ Footer ------------------ */
+
+footer {
+    font-family: 'Chelsea Market', cursive;
+    padding-bottom: -150px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-image: linear-gradient(to right, #5bbdff, #94dfff);
+}
