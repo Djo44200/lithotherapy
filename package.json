@@ -7,9 +7,9 @@
     "node-sass": "^4.12.0",
     "popper.js": "^1.15.0",
     "sass-loader": "7.0.1",
-    "vue": "^2.6.11",
+    "vue": "^2.5.13",
     "vue-loader": "15.0.11",
-    "vue-template-compiler": "^2.6.11",
+    "vue-template-compiler": "^2.5.13",
     "webpack-notifier": "^1.8.0",
     "yarn": "^1.17.3"
   },
