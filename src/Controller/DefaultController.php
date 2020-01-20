@@ -12,6 +12,13 @@ class DefaultController extends Controller
      */
     public function default()
     {
-        return $this->render('base.html.twig');
+        if ($this->getUser()){
+            return $this->render('security/login.html.twig');
+
+        }
+
+        return $this->redirectToRoute('app_login');
+
+
     }
 }

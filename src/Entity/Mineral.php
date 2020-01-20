@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MineralRepository")
@@ -34,37 +35,41 @@ class Mineral
     private $propriety;
 
     /**
-     * @ORM\Column(type="binary", nullable=true)
+     * @var string
+     * @ORM\Column(name="img", type="string", nullable=true)
+     * @Assert\File(
+     *     mimeTypes={"image/png" ,"image/jpg","image/jpeg"},
+     *     mimeTypesMessage = "Svp inserer une image valide (png,jpg,jpeg)")
      */
     private $photo;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\hardness", inversedBy="minerals")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Hardness", inversedBy="minerals")
      */
     private $hardnesses;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\color", inversedBy="minerals")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Color", inversedBy="minerals")
      */
     private $colors;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\reload", inversedBy="minerals")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Reload", inversedBy="minerals")
      */
     private $reloads;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\purification", inversedBy="minerals")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Purification", inversedBy="minerals")
      */
     private $purifications;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\chakra", inversedBy="minerals")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Chakra", inversedBy="minerals")
      */
     private $chakras;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\user", inversedBy="minerals")
+     * @ORM\ManyToMany(targetEntity="App\Entity\User", inversedBy="minerals")
      */
     private $users;
 
