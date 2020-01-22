@@ -1,17 +1,199 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Welcome!{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
+    {{ encore_entry_link_tags('app') }}
+    <title>{% block title %}Connexion{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Chelsea+Market&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Play&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-{% block body %}
-    <div id="app">Oups.. Problème</div>
-{% endblock %}
 
-{% block javascripts %}
-    <script src="{{ asset('build/app.js') }}"></script>
-{% endblock %}
+<div class="container-fluid" id="containerNav">
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <!-- Brand -->
+            <div id="logo">
+                <a class="navbar-brand scroll" href="{{ path('app_Index') }}"><img alt="logo" class="img-fluid" src="{{ asset('build/images/home2.png') }}">
+                    <span><strong>Sortir</strong>.com | </span>
+                </a>
+            </div>
+            <!-- Bouton responsive -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Liens -->
+            <div class="collapse navbar-collapse " id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                </ul>
+            </div>
+        </nav>
+    </header>
+</div>
+
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="alert-{{ label }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+
+<div class="main">
+    {% block body %}{% endblock %}
+    {% block javascripts %}{% endblock %}
+</div>
+
+<br><br><br>
+
+<!-- Footer -->
+<footer class="page-footer font-small blue-grey lighten-5">
+    <div class="container-fluid">
+
+        <!-- Call to action -->
+        <ul class="list-unstyled list-inline text-center py-2">
+            <li class="list-inline-item">
+                <a href="#" class="btn btn-outline-white btn-rounded " data-toggle="modal" data-target="#confidence">
+                    La politique de confidentialité
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#" class="btn btn-outline-white btn-rounded" data-toggle="modal" data-target="#condition">
+                    CGU
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#" class="btn btn-outline-white btn-rounded" data-toggle="modal" data-target="#contact">
+                    Nous contacter
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#" class="btn btn-outline-white btn-rounded" data-toggle="modal" data-target="#qui">
+                    Qui sommes nous ?
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright :
+        <a href="{{ path('app_Index') }}"> Lithotherapie.com</a>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+    </div>
+
+</footer>
+
+<!-- Modal (liées aux liens du footer) -->
+
+<!-- modal politique de conf -->
+<div class="modal fade" id="confidence" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Politique de confidentialité</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-justify">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt
+                    libero ut eleifend facilisis. Vivamus rutrum nec sapien id fermentum.
+                    Mauris laoreet, sem vulputate fringilla egestas, libero elit viverra elit,
+                    quis venenatis metus dolor id erat. Vestibulum feugiat urna at eros accumsan,
+                    et pellentesque dui laoreet. Nam sed vestibulum lectus, in auctor orci.
+                    Vestibulum sed lacus at mauris ornare luctus. Mauris in scelerisque velit,
+                    eget consequat dui. Phasellus pulvinar non tortor semper convallis.
+                    Ut sit amet tempor lorem. Proin bibendum eros in lectus luctus, id bibendum erat consequat..</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal CGU -->
+<div class="modal fade" id="condition" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">CGU</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-justify">
+                <p>Les présentes Conditions Générales d’Utilisation (CGU)
+                    déterminent les règles d’accès et les modalités d’utilisation
+                    du service intitulé Lithotherapie.com accessible depuis le site web
+                    https://www. Lithotherapie.com, et sur smartphones Android et iPhone
+                    ainsi que sur les autres supports fonctionnants avec les mêmes
+                    systèmes d’exploitation. L’utilisateur du service Lithotherapie.com
+                    reconnait accepter, sans restriction ni réserve, l’ensemble des CGU qui vont suivre. </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal "Nous contacter" -->
+<div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Nous contacter</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Votre adresse mail</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Votre message</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Envoyer</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal "qui sommes-nous?" -->
+<div class="modal fade" id="qui" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Qui sommes-nous ?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-justify">
+                <h5>Lithotherapie.com</h5>
+                <p>Fondée en 2019 par la société ENI, Lithotherapie.com est une plateforme Web développée
+                    pour ses stagiaires actifs ainsi que ses anciens stagiaires.
+                    Notre ambition est de permettre aux stagiaires de créer
+                    du lien extra-formation et ainsi développer la cohésion sociale et le réseau professionnel.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{ encore_entry_script_tags('app') }}
 </body>
 </html>

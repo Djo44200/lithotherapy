@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <h1 class="text-muted">Inscription</h1>
+        <div id="inscription">
+            {{ form_start(registrationForm,{'method': 'post', 'attr': {'class': ''}}) }}
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group ">
+                        {{ form_label(registrationForm.name) }}
+                        {{ form_widget(registrationForm.name) }}
+                        <div class="message_erreur">
+                            {{ form_errors(registrationForm.name) }}
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        {{ form_label(registrationForm.firstName) }}
+                        {{ form_widget(registrationForm.firstName) }}
+                        <div class="message_erreur">
+                            {{ form_errors(registrationForm.firstName) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(registrationForm.email) }}
+                        {{ form_widget(registrationForm.email, {'attr': {'class':'form-control'}}) }}
+                        <div class="message_erreur">
+                            {{ form_errors(registrationForm.email) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group ">
+                        {{ form_label(registrationForm.plainPassword.first) }}
+                        {{ form_widget(registrationForm.plainPassword.first, {'attr': {'class':'form-control'}}) }}
+                        <div class="message_erreur">
+                            {{ form_errors(registrationForm.plainPassword.first) }}
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        {{ form_label(registrationForm.plainPassword.second) }}
+                        {{ form_widget(registrationForm.plainPassword.second, {'attr': {'class':'form-control'}}) }}
+                        <div class="message_erreur">
+                            {{ form_errors(registrationForm.plainPassword.second) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        {# bouton "inscrire" du formulaire creation utilisateur #}
+        {{ form_row(registrationForm.submit, {'attr': {'class':'bouton'}}) }}
+
+        {# messages d'erreurs #}
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert-{{ label }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        {{ form_end(registrationForm) }}
+    </div>
+
+    <br>
+
+    {# bouton annuler du formulaire creation utilisateur #}
+    <div class="container-fluid">
+        <a href="{{ path('app_login') }}">
+            <button class="btn bouton">Annuler</button>
+        </a>
+    </div>
+
+
+{% endblock %}
