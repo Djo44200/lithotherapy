@@ -3,33 +3,36 @@
 {% block title %}Purification index{% endblock %}
 
 {% block body %}
-    <h1>Purification index</h1>
-
-    <table class="table">
-        <thead>
+    <h1>Liste des purifications</h1>
+    <a href="{{ path('purification_new') }}">
+        <button class="btn bouton">Créer une purification</button>
+    </a>
+    <br><br>
+    <div class="table-responsive-xl">
+        <table class="table table-hover">
+            <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
+                <th>Nom</th>
+                <th>Actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for purification in purifications %}
-            <tr>
-                <td>{{ purification.id }}</td>
-                <td>{{ purification.name }}</td>
-                <td>
-                    <a href="{{ path('purification_show', {'id': purification.id}) }}">show</a>
-                    <a href="{{ path('purification_edit', {'id': purification.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('purification_new') }}">Create new</a>
+            </thead>
+            <tbody>
+            {% for purification in purifications %}
+                <tr>
+                    <td>{{ purification.id }}</td>
+                    <td>{{ purification.name }}</td>
+                    <td>
+                        <a href="{{ path('purification_show', {'id': purification.id}) }}">show</a>
+                        <a href="{{ path('purification_edit', {'id': purification.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">Aucune purification trouvée </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
