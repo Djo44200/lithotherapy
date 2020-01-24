@@ -15,6 +15,7 @@ class PrincipalController extends Controller
         if ($this->getUser()){
             // Récupération de l'ID du user en session
             $userId = $this->get('security.token_storage')->getToken()->getUser()->getId();
+
             return $this->render('principal/principal.html.twig', [
                 'user' => $userId
             ]);

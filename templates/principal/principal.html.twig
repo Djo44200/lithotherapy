@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Lithotherapie.com</title>
-</head>
-<body>
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1 class="text-muted">Liste des sorties</h1>
+        <div class="jour col-11">Date du jour : {{ date('now') | date('d/m/Y') }}</div>
+        {% if app.user.roles == ['ROLE_ADMIN'] %}
+            <div class="jour col-11 "><strong>Vous êtes connecté en tant qu'administrateur.</strong></div>
+        {% endif %}
+
+    </div>
 {{ user }}
-</body>
-</html>
+
+{% endblock %}

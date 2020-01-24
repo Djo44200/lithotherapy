@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Chakra;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,8 +14,11 @@ class ChakraType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('minerals')
-        ;
+            ->add('submit',SubmitType::class,[
+                'label'=> 'Enregistrer',
+                'attr' => array('class' => 'btn bouton')
+            ]);
+
     }
 
     public function configureOptions(OptionsResolver $resolver)
