@@ -77,4 +77,13 @@ class Color
 
         return $this;
     }
+
+    public function __toString(): ?string
+    {
+        if(is_null($this->getName())) {
+            return 'NULL';
+        }
+        return $this->getName();
+
+    }
 }

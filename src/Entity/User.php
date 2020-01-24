@@ -240,4 +240,13 @@ class User implements UserInterface
 
         return $this;
     }
+
+    public function __toString(): ?string
+    {
+
+        $sb = $this->getname() . " " . $this->getFirstName();
+
+        return $sb;
+
+    }
 }

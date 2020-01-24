@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Chakra{% endblock %}
+
+{% block body %}
+    <h1>Create new Chakra</h1>
+
+    {{ include('chakra/_form.html.twig') }}
+
+    <a href="{{ path('chakra_index') }}">back to list</a>
+{% endblock %}

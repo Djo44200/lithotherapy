@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mineral{% endblock %}
+
+{% block body %}
+    <h1>Mineral</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ mineral.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ mineral.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ mineral.description }}</td>
+            </tr>
+            <tr>
+                <th>Propriety</th>
+                <td>{{ mineral.propriety }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ mineral.photo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('mineral_index') }}">back to list</a>
+
+    <a href="{{ path('mineral_edit', {'id': mineral.id}) }}">edit</a>
+
+    {{ include('mineral/_delete_form.html.twig') }}
+{% endblock %}

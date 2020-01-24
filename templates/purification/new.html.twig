@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Purification{% endblock %}
+
+{% block body %}
+    <h1>Create new Purification</h1>
+
+    {{ include('purification/_form.html.twig') }}
+
+    <a href="{{ path('purification_index') }}">back to list</a>
+{% endblock %}

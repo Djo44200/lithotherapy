@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Reload{% endblock %}
+
+{% block body %}
+    <h1>Edit Reload</h1>
+
+    {{ include('reload/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('reload_index') }}">back to list</a>
+
+    {{ include('reload/_delete_form.html.twig') }}
+{% endblock %}

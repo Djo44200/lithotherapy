@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Hardness{% endblock %}
+
+{% block body %}
+    <h1>Create new Hardness</h1>
+
+    {{ include('hardness/_form.html.twig') }}
+
+    <a href="{{ path('hardness_index') }}">back to list</a>
+{% endblock %}

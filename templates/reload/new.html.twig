@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Reload{% endblock %}
+
+{% block body %}
+    <h1>Create new Reload</h1>
+
+    {{ include('reload/_form.html.twig') }}
+
+    <a href="{{ path('reload_index') }}">back to list</a>
+{% endblock %}

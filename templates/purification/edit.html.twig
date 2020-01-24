@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Purification{% endblock %}
+
+{% block body %}
+    <h1>Edit Purification</h1>
+
+    {{ include('purification/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('purification_index') }}">back to list</a>
+
+    {{ include('purification/_delete_form.html.twig') }}
+{% endblock %}

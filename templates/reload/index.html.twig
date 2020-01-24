@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reload index{% endblock %}
+
+{% block body %}
+    <h1>Reload index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reload in reloads %}
+            <tr>
+                <td>{{ reload.id }}</td>
+                <td>{{ reload.name }}</td>
+                <td>
+                    <a href="{{ path('reload_show', {'id': reload.id}) }}">show</a>
+                    <a href="{{ path('reload_edit', {'id': reload.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('reload_new') }}">Create new</a>
+{% endblock %}
