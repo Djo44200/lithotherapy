@@ -1,13 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Hardness{% endblock %}
+{% block title %}Editer une dureté{% endblock %}
 
 {% block body %}
-    <h1>Edit Hardness</h1>
+    <h1 class="text-muted">Editer une dureté </h1>
 
-    {{ include('hardness/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('hardness_index') }}">back to list</a>
+    {{ form_start(form) }}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 ">
+                {{ form_label(form.number) }}
+                {{ form_widget(form.number) }}
+                {{ form_errors(form.number) }}
 
-    {{ include('hardness/_delete_form.html.twig') }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <br>
+                {{ form_label(form.submit) }}
+                {{ form_widget(form.submit) }}
+                {{ form_end(form) }}
+            </div>
+            <div class="col-2">
+                <br>
+                <a href="{{ path('color_index') }}">
+                    <button class="btn bouton">Retour</button>
+                </a>
+            </div>
+            <div class="col-2">
+                <br>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
 {% endblock %}

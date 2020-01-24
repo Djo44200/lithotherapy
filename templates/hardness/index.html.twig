@@ -1,35 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hardness index{% endblock %}
+{% block title %}hardness index{% endblock %}
 
 {% block body %}
-    <h1>Hardness index</h1>
-
-    <table class="table">
-        <thead>
+    <h1>Liste des dureté</h1>
+    <a href="{{ path('hardness_new') }}">
+        <button class="btn bouton">Créer une dureté</button>
+    </a>
+    <br><br>
+    <div class="table-responsive-xl">
+        <table class="table table-hover">
+            <thead>
             <tr>
                 <th>Id</th>
-                <th>Number</th>
-                <th>actions</th>
+                <th>Nombre</th>
+                <th>Actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for hardness in hardnesses %}
-            <tr>
-                <td>{{ hardness.id }}</td>
-                <td>{{ hardness.number }}</td>
-                <td>
-                    <a href="{{ path('hardness_show', {'id': hardness.id}) }}">show</a>
-                    <a href="{{ path('hardness_edit', {'id': hardness.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('hardness_new') }}">Create new</a>
+            </thead>
+            <tbody>
+            {% for hardness in hardnesses %}
+                <tr>
+                    <td>{{ hardness.id }}</td>
+                    <td>{{ hardness.number }}</td>
+                    <td>
+                        <a href="{{ path('hardness_show', {'id': hardness.id}) }}">show</a>
+                        <a href="{{ path('hardness_edit', {'id': hardness.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">Aucune dureté trouvée </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
