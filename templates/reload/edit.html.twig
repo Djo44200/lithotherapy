@@ -1,5 +1,45 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Editer un rechargement{% endblock %}
+
+{% block body %}
+    <h1 class="text-muted">Editer un rechargement </h1>
+
+
+    {{ form_start(form) }}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 ">
+                {{ form_label(form.name) }}
+                {{ form_widget(form.name) }}
+                {{ form_errors(form.name) }}
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <br>
+                {{ form_label(form.submit) }}
+                {{ form_widget(form.submit) }}
+                {{ form_end(form) }}
+            </div>
+            <div class="col-2">
+                <br>
+                <a href="{{ path('reload_index') }}">
+                    <button class="btn bouton">Retour</button>
+                </a>
+            </div>
+            <div class="col-2">
+                <br>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
+{% extends 'base.html.twig' %}
+
 {% block title %}Edit Reload{% endblock %}
 
 {% block body %}

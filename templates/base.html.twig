@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     {{ encore_entry_link_tags('app') }}
     <title>{% block title %}Connexion{% endblock %}</title>
-    <link href="https://fonts.googleapis.com/css?family=Chelsea+Market&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Play&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
 
@@ -15,10 +13,12 @@
         <nav class="navbar navbar-expand-md navbar-dark">
             <!-- Brand -->
             <div id="logo">
-                <a class="navbar-brand scroll" href="{{ path('app_Index') }}"><img alt="logo" class="img-fluid" src="{{ asset('build/images/home2.png') }}">
-                    <span><strong>Sortir</strong>.com | </span>
+                <a class="navbar-brand scroll" href="{{ path('app_Index') }}"><img alt="logo" class="img-fluid" src="{{ asset('build/images/lotus.png') }}">
+                    <span><strong>Lithotherapy</strong>.com | </span>
                 </a>
             </div>
+        </nav>
+        <nav class="navbar navbar-expand-md navbar-dark">
             <!-- Bouton responsive -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -26,6 +26,34 @@
             <!-- Liens -->
             <div class="collapse navbar-collapse " id="collapsibleNavbar">
                 <ul class="navbar-nav">
+                    {% if app.user.roles == ["ROLE_ADMIN"] %}
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-color" href="{{ path('chakra_index') }}">Chakra</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-color" href="{{ path('color_index') }}">Couleurs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-color" href="{{ path('hardness_index') }}">Dureté</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-color" href="{{ path('purification_index') }}">Purification</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-color" href="{{ path('reload_index') }}">Rechargement</a>
+                        </li>
+
+                    {% endif %}
+                    {% if app.user.roles == ["ROLE_USER"] %}
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-color" href="{{ path('app_index') }}">Accueil</a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item utilisateur">
+                        <a class="nav-link nav-link-color scroll" href="{{ path('app_logout') }}">
+                            <img alt="logout" class="logout" src="{{ asset('build/images/cancel.svg') }}">
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -77,10 +105,8 @@
     </div>
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2019 Copyright :
+    <div class="footer-copyright text-center py-3">© {{ "now"|date("Y") }} Copyright :
         <a href="{{ path('app_Index') }}"> Lithotherapie.com</a>
-        <a href="#" class="fa fa-facebook"></a>
-        <a href="#" class="fa fa-twitter"></a>
     </div>
 
 </footer>

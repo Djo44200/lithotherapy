@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Lithotherapie.com</title>
-</head>
-<body>
-{{ user }}
-</body>
-</html>
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <a class="nav-link scroll" href="{{ url('user_show', { 'id' : app.user.id} ) }}">
+        Bonjour <strong>{{ app.user }}</strong> !{% if app.user.roles == ['ROLE_ADMIN'] %}
+            <strong>ADMIN</strong>
+        {% endif %}
+    </a>
+    <div class="container-fluid">
+
+    </div>
+
+
+{% endblock %}

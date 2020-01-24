@@ -3,9 +3,26 @@
 {% block title %}New Color{% endblock %}
 
 {% block body %}
-    <h1>Create new Color</h1>
+    <h1>Créer une nouvelle couleur</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                {{ form_start(form) }}
 
-    {{ include('color/_form.html.twig') }}
-
-    <a href="{{ path('color_index') }}">back to list</a>
+                {{ form_label(form.name)}}
+                {{form_widget(form.name, {'attr': {'class':'form-control'}})}}
+                {{ form_errors(form.name) }}
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-4">
+                {{form_widget(form.submit)}}
+            </div>
+            {{ form_end(form) }}
+            <div class="col-8">
+                <a href="{{ path('color_index') }}"><button class="btn bouton">Retour à la liste</button></a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
