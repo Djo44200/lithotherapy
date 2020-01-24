@@ -60,12 +60,12 @@ h2 {
 
 /* ------------------ Header ------------------ */
 #containerNav {
-    background-image: linear-gradient(to right, #5bbdff, #94dfff);
+    background-image: linear-gradient(to right, #bd08ff, #070aff, #41ddff, #0dcb13, #f7f70f, #ff9c1c, #ff1b2f);
     font-family: 'Chelsea Market', cursive;
 }
 
 .navbar-dark {
-    background-image: linear-gradient(to right, #5bbdff, #94dfff);
+    background-image: linear-gradient(to right, #bd08ff, #070aff, #41ddff, #0dcb13, #f7f70f, #ff9c1c, #ff1b2f);
 }
 
 #logo img {
@@ -143,7 +143,7 @@ h2 {
 }
 
 .bouton {
-    background-color: #5bbdff;
+    background-color: #bd08ff;
     padding: 15px;
     color: white;
     border-radius: 5px;
@@ -152,7 +152,7 @@ h2 {
 }
 
 .bouton:hover {
-    background-color: #74fcff;
+    background-color: #41ddff;
     color: white;
 }
 
@@ -198,32 +198,7 @@ button {
     color: red;
 }
 
-/*--------------------Social media Button--------*/
-/* Style all font awesome icons */
-.fa {
-    padding: 10px;
-    font-size: 15px;
-    width: 30px;
-    text-align: center;
-    text-decoration: none;
-}
 
-/* Add a hover effect */
-.fa:hover {
-    opacity: 0.7;
-}
-
-/* Facebook */
-.fa-facebook {
-    background: #3B5998;
-    color: white;
-}
-
-/* Twitter */
-.fa-twitter {
-    background: #55ACEE;
-    color: white;
-}
 
 /* ------------------ Footer ------------------ */
 
@@ -236,5 +211,5 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
-    background-image: linear-gradient(to right, #5bbdff, #94dfff);
+    background-image: linear-gradient(to right, #bd08ff, #070aff, #41ddff, #0dcb13, #f7f70f, #ff9c1c, #ff1b2f);
 }

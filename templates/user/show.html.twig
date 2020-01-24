@@ -1,42 +1,56 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User{% endblock %}
+{% block title %}Profil{% endblock %}
 
 {% block body %}
-    <h1>User</h1>
+    {% if app.user.id == user.id %}
+        <h1 class="text-muted">Votre profil</h1>
+    {% else %}
+        <h1 class="text-muted">Profil de {{ user.name }}</h1>
+    {% endif %}
+    <div id="profil">
+        <div class="infosProfil">
+            <div class="row">
+                <div class="col-6 gauche">
+                    <p>Nom</p>
+                    <p>Prénom</p>
+                    <p>Email</p>
+                    {% if app.user.roles == ["ROLE_ADMIN"] %}
+                        <p>Rôle de l'utilisateur</p>
+                    {% endif %}
+                </div>
+                <div class="col-6 droit">
+                    {% if user.firstName is empty %}
+                        <p>-</p>
+                    {% else %}
+                        <p>{{ user.firstName }}</p>
+                    {% endif %}
+                    {% if user.name is empty %}
+                        <p>-</p>
+                    {% else %}
+                        <p>{{ user.name }}</p>
+                    {% endif %}
+                    <p>{{ user.email }}</p>
+                    {% if app.user.roles == ["ROLE_ADMIN"] %}
+                        {% if user.roles is empty %}
+                            <p>-</p>
+                        {% else %}
+                            {% if user.roles == ["ROLE_ADMIN"] %}
+                                <p>Administrateur</p>
+                            {% else %}
+                                <p>Utilisateur</p>
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ user.id }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ user.email }}</td>
-            </tr>
-            <tr>
-                <th>Roles</th>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-            </tr>
-            <tr>
-                <th>Password</th>
-                <td>{{ user.password }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ user.name }}</td>
-            </tr>
-            <tr>
-                <th>FirstName</th>
-                <td>{{ user.firstName }}</td>
-            </tr>
-        </tbody>
-    </table>
+                </div>
+            </div>
+        </div>
+        {% if app.user.id == user.id %}
+            <a href="{{ path('user_edit', {'id': user.id}) }}" ><button class="bouton">Modifier</button></a>
+        {% endif %}
+        <a href="{{ path('app_Index', {'id': user.id}) }}" ><button class="bouton">Retour</button></a>
 
-    <a href="{{ path('user_index') }}">back to list</a>
+    </div>
 
-    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
-
-    {{ include('user/_delete_form.html.twig') }}
 {% endblock %}
