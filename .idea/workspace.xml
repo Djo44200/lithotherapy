@@ -3,15 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="66db7449-ace8-4768-9db6-7d4af364f0c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ChakraType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ChakraType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ColorType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ColorType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/HardnessType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/HardnessType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/PurificationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PurificationType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ReloadType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ReloadType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/principal/principal.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/principal/principal.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Chakra.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Chakra.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Hardness.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Hardness.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Mineral.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Mineral.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Purification.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Purification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Reload.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Reload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/MineralType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MineralType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/mineral/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/mineral/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/mineral/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/mineral/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/mineral/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/mineral/new.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +163,8 @@
       <workItem from="1579538768199" duration="4017000" />
       <workItem from="1579710142396" duration="3502000" />
       <workItem from="1579868347216" duration="27000" />
-      <workItem from="1579868434967" duration="9452000" />
+      <workItem from="1579868434967" duration="9730000" />
+      <workItem from="1579884337728" duration="3918000" />
     </task>
     <task id="LOCAL-00001" summary=".env ajouté">
       <created>1579711930127</created>
@@ -205,10 +206,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="75" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1579869103011" />
-    <state x="574" y="100" key="#com.intellij.ide.util.MemberChooser" timestamp="1579869077371">
+    <state x="574" y="100" key="#com.intellij.ide.util.MemberChooser" timestamp="1579888274547">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="100" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1579869077371" />
+    <state x="574" y="100" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1579888274547" />
     <state x="457" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579541653943">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -217,10 +218,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="163" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1579532234233" />
-    <state x="883" y="174" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1579875690327">
+    <state x="883" y="174" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1579885480414">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="883" y="174" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1579875690327" />
+    <state x="883" y="174" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1579885480414" />
     <state x="406" y="12" key="CommitChangelistDialog2" timestamp="1579711929158">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

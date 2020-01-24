@@ -3,39 +3,51 @@
 {% block title %}Mineral index{% endblock %}
 
 {% block body %}
-    <h1>Mineral index</h1>
-
-    <table class="table">
-        <thead>
+    <h1>Liste des pierres</h1>
+    <a href="{{ path('mineral_new') }}">
+        <button class="btn bouton">Créer une pierre</button>
+    </a>
+    <br><br>
+    <div class="table-responsive-xl">
+        <table class="table table-hover">
+            <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Propriety</th>
+                <th>Nom</th>
+                <th>Desription</th>
+                <th>Propriétés</th>
                 <th>Photo</th>
-                <th>actions</th>
+                <th>Dureté</th>
+                <th>Couleurs</th>
+                <th>Rechargement</th>
+                <th>Purification</th>
+                <th>Chakra</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for mineral in minerals %}
-            <tr>
-                <td>{{ mineral.id }}</td>
-                <td>{{ mineral.name }}</td>
-                <td>{{ mineral.description }}</td>
-                <td>{{ mineral.propriety }}</td>
-                <td>{{ mineral.photo }}</td>
-                <td>
-                    <a href="{{ path('mineral_show', {'id': mineral.id}) }}">show</a>
-                    <a href="{{ path('mineral_edit', {'id': mineral.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('mineral_new') }}">Create new</a>
+            </thead>
+            <tbody>
+            {% for mineral in minerals %}
+                <tr>
+                    <td>{{ mineral.id }}</td>
+                    <td>{{ mineral.name }}</td>
+                    <td>{{ mineral.description }}</td>
+                    <td>{{ mineral.propriety }}</td>
+                    <td>{{ mineral.photo }}</td>
+                    <td>{{ mineral.hardnesses }}</td>
+                    <td>{{ mineral.colors }}</td>
+                    <td>{{ mineral.reloads }}</td>
+                    <td>{{ mineral.purifications }}</td>
+                    <td>{{ mineral.chakras }}</td>
+                    <td>
+                        <a href="{{ path('mineral_show', {'id': mineral.id}) }}">show</a>
+                        <a href="{{ path('mineral_edit', {'id': mineral.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="12">Aucune pierre trouvée </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

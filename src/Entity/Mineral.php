@@ -144,6 +144,15 @@ class Mineral
         return $this->hardnesses;
     }
 
+    /**
+     * @param ArrayCollection $hardnesses
+     */
+    public function setHardnesses(ArrayCollection $hardnesses): void
+    {
+        $this->hardnesses = $hardnesses;
+    }
+    
+
     public function addHardness(hardness $hardness): self
     {
         if (!$this->hardnesses->contains($hardness)) {

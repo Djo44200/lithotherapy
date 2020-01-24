@@ -1,11 +1,85 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Mineral{% endblock %}
+{% block title %}New mineral{% endblock %}
 
 {% block body %}
-    <h1>Create new Mineral</h1>
+    <h1>Créer une nouvelle pierre</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                {{ form_start(form) }}
 
-    {{ include('mineral/_form.html.twig') }}
+                {{ form_label(form.name)}}
+                {{form_widget(form.name, {'attr': {'class':'form-control'}})}}
+                {{ form_errors(form.name) }}
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
 
-    <a href="{{ path('mineral_index') }}">back to list</a>
+                {{ form_label(form.colors)}}
+                {{form_widget(form.colors, {'attr': {'class':'form-control'}})}}
+                {{ form_errors(form.colors) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+
+                {{ form_label(form.description)}}
+                {{form_widget(form.description, {'attr': {'class':'form-control'}})}}
+                {{ form_errors(form.description) }}
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+
+                {{ form_label(form.reloads)}}
+                {{form_widget(form.reloads, {'attr': {'class':'form-control'}})}}
+                {{ form_errors(form.reloads) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+
+                {{ form_label(form.propriety)}}
+                {{form_widget(form.propriety, {'attr': {'class':'form-control'}})}}
+                {{ form_errors(form.propriety) }}
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+
+                {{ form_label(form.purifications)}}
+                {{form_widget(form.purifications, {'attr': {'class':'form-control'}})}}
+                {{ form_errors(form.purifications) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+
+                {{ form_label(form.photo)}}
+                {{form_widget(form.photo, {'attr': {'class':'form-control'}})}}
+                {{ form_errors(form.photo) }}
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+
+                {{ form_label(form.chakras)}}
+                {{form_widget(form.chakras, {'attr': {'class':'form-control'}})}}
+                {{ form_errors(form.chakras) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+
+                {{ form_label(form.hardnesses)}}
+                {{form_widget(form.hardnesses, {'attr': {'class':'form-control'}})}}
+                {{ form_errors(form.hardnesses) }}
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-6">
+                {{form_widget(form.submit)}}
+            </div>
+            {{ form_end(form) }}
+            <div class="col-6">
+                <a href="{{ path('mineral_index') }}"><button class="btn bouton">Retour à la liste</button></a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
