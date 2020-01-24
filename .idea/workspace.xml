@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="66db7449-ace8-4768-9db6-7d4af364f0c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/purification/_delete_form.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/purification/_form.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/purification/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/purification/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/purification/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/purification/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/purification/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/purification/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/purification/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/purification/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reload/_delete_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reload/_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reload/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reload/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reload/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reload/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reload/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reload/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reload/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reload/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +160,7 @@
       <workItem from="1579538768199" duration="4017000" />
       <workItem from="1579710142396" duration="3502000" />
       <workItem from="1579868347216" duration="27000" />
-      <workItem from="1579868434967" duration="6470000" />
+      <workItem from="1579868434967" duration="6753000" />
     </task>
     <task id="LOCAL-00001" summary=".env ajouté">
       <created>1579711930127</created>

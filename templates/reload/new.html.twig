@@ -3,9 +3,26 @@
 {% block title %}New Reload{% endblock %}
 
 {% block body %}
-    <h1>Create new Reload</h1>
+    <h1>Créer un nouveau rechargement</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                {{ form_start(form) }}
 
-    {{ include('reload/_form.html.twig') }}
-
-    <a href="{{ path('reload_index') }}">back to list</a>
+                {{ form_label(form.name)}}
+                {{form_widget(form.name, {'attr': {'class':'form-control'}})}}
+                {{ form_errors(form.name) }}
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-4">
+                {{form_widget(form.submit)}}
+            </div>
+            {{ form_end(form) }}
+            <div class="col-8">
+                <a href="{{ path('reload_index') }}"><button class="btn bouton">Retour à la liste</button></a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
