@@ -11,7 +11,7 @@
     "vue-loader": "15.0.11",
     "vue-template-compiler": "^2.5.13",
     "webpack-notifier": "^1.8.0",
-    "yarn": "^1.17.3"
+    "yarn": "^1.22.0"
   },
   "dependencies": {
     "@symfony/webpack-encore": "^0.28.2",
